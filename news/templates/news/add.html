@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'news/css/add.css' %}">
+{% endblock %}
+
+{% block section %}
+<div class="outer-section">
+    <p class="block-title">Добавить статью</p>
+    <form action="" method="POST">
+        <span>{{ error }}</span>
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.abstract }}<br>
+        {{ form.full_text }}<br>
+        {{ form.date }}<br>
+        <button type="submit" class="btn btn-primary">Добавить статью</button>
+    </form>
+</div>
+{% endblock %}

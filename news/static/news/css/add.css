@@ -1,0 +1,11 @@
+.outer-section {
+    padding: 15px;
+    background-color: #fdefef;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.block-title {
+    text-align: center;
+    font-size: 15pt;
+}

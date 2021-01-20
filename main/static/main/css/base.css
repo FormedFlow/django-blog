@@ -1,0 +1,109 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Arial Black";
+    background-image: url("../images/volskaya.jpg");
+    background-size: 130% auto;
+    background-position: top;
+    background-repeat: repeat;
+}
+
+header {
+    background-color: darkred;
+    position: sticky;
+    top: 0;
+}
+
+.inner_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    max-height: 80px;
+    overflow: hidden;
+}
+
+.inner_header img {
+    height: 80px;
+}
+
+.inner_header * {
+    padding: 5px 0;
+}
+
+.inner_header a {
+    color: white;
+    text-decoration: none;
+    font-size: 25pt;
+    padding: 10px;
+}
+
+.inner_header a:hover {
+    background-color: #eab109;
+    border-radius: 20px;
+    color: black;
+}
+
+section {
+    margin-top: 40px;
+}
+
+.inner_section {
+    display: flex;
+    margin: 0 15%;
+    padding: 100px;
+    background-color: #efe0e0;
+    border: 2px solid black;
+    border-radius: 30px;
+    /*justify-content: center;
+     */
+    min-height: 800px;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    background-color: #efe0e0;
+    margin-top: 40px;
+}
+
+.inner_footer {
+    display: flex;
+    justify-content: center;
+}
+
+.inner_footer a {
+    text-decoration: none;
+    color: black;
+}
+
+a span {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+.main_message {
+    max-width: 660px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #fdefef;
+}
+
+.form-control:not([type='submit']) {
+    border: 1px solid black;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:not([type='submit']):focus {
+    color: #495057;
+    background-color: #fff;
+    outline: 0;
+    border: 1px solid darkred;
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5);
+}
+
+

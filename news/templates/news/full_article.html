@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block section %}
+    <div>
+        {{ article.title }}<br>
+        {{ article.abstract}}<br>
+        {{ article.full_text }}<br>
+        {{ article.date }}
+    </div>
+{% endblock %}

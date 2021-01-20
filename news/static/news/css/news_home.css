@@ -1,0 +1,20 @@
+
+.articles {
+    max-width: 500px;
+    text-align: center;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #fdefef;
+}
+
+.abstract {
+    text-align: left;
+    text-indent: 12px;
+}
+
+
+
+/* .articles * {
+    word-break: break-all;
+}

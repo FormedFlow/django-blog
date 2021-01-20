@@ -1,0 +1,37 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
+    {% block head %}{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="inner_header">
+            <img src="{% static 'main/images/thunder.png' %}">
+            <a href="{% url 'index' %}">Главная</a>
+            <a href="{% url 'news_home' %}">Статьи</a>
+            <a href="{% url 'add' %}">Добавить статью</a>
+            <a href="{% url 'about' %}">О сайте</a>
+            <a href="{% url 'register' %}">Регистрация</a>
+            <a href="{% url 'register' %}">Вход</a>
+        </div>
+    </header>
+    <section>
+        <div class="inner_section">
+            {% block section %}{% endblock %}
+        </div>
+    </section>
+    <footer>
+        <div class="inner_footer">
+            <a href="https://github.com/FormedFlow"><span>FormedFlow</span> - 2021</a>
+        </div>
+    </footer>
+</body>
+</html>

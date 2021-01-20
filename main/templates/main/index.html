@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block head %}<link rel="stylesheet" href="{% static 'main/css/index.css' %}">{% endblock %}
+{% block title %}Главная{% endblock %}
+
+{% block section %}
+    <div class="main_message">
+        <h1>Добро пожаловать!</h1>
+        <p>Здесь располагается фрагмент блога, и, пока, ничего более.
+        Возможно, вскоре функционал будет расширен, а пока затянем пояса.</p>
+    </div>
+{% endblock %}

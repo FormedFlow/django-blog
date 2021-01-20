@@ -1,0 +1,2 @@
+1. Class inner-header has fixed max-height 80px due to the issues with page scaling.
+This should be fixed in case blog really will go to deploy stage.

@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block head %}<link rel="stylesheet" href="{% static 'main/css/about.css' %}">{% endblock %}
+{% block title %}О сайте{% endblock %}
+{% block section %}
+<div class="main_message">
+    <h1>О сайте</h1>
+    <p>Данный сайт предназначен для практики и демонстрации базовых
+        возможностей фреймворка Django. Количество статей в базе данных: {{ count }}</p>
+</div>
+{% endblock %}

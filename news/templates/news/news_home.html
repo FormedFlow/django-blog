@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block section %}
+    <link rel="stylesheet" href="{% static 'news/css/news_home.css' %}">
+    {% for item in news %}
+        <div class="articles">
+            <h3 class="title">{{ item.title }}</h3>
+            <p class="abstract">{{ item.abstract }}</p>
+            <p class="date">{{ item.date }}</p>
+            <a href="{% url 'news-detail' item.id %}" class="btn btn-primary">Подробнее</a>
+            <a href="{% url 'news-update' item.id %}" class="btn btn-warning">Редактировать</a>
+            <a href="{% url 'news-delete' item.id %}" class="btn btn-danger">Удалить</a>
+        </div><br>
+    {% endfor %}
+{% endblock %}
