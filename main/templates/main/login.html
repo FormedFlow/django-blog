@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Вход{% endblock %}
+{% block head %}
+<script src="{% static 'main/js/placeholders_login.js' %}"></script>
+<link rel="stylesheet" href="{% static 'main/css/login_form.css' %}">
+{% endblock %}
+
+{% block section %}
+{% for message in messages %}
+<p class="msg" style="color:
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        #00c600
+    {% else %}
+        #ff0000
+    {% endif %}
+">{{ message }}</p>
+{% endfor %}
+<div class="outer-section">
+    <p>Вход</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.username }}
+        {{ form.password1 }}
+        <input type="submit" value="Вход" class="btn btn-primary">
+    </form>
+</div>
+{% endblock %}
+
+<a style="color: #ff0000"
