@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticlesForm
 from django.views.generic import DetailView, UpdateView, DeleteView
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+@login_required(login_url='login')
 def add(request):
     error = ''
     if request.method == 'POST':
