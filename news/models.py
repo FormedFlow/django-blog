@@ -1,10 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 
 class Articles(models.Model):
-    #author = models.CharField('Автор', max_length=150)
+    author = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True)
     title = models.CharField('Заголовок', max_length=50)
     abstract = models.CharField('Аннотация', max_length=250)
     full_text = models.TextField('Текст')

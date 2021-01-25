@@ -3,6 +3,7 @@ from .models import Articles
 from .forms import ArticlesForm
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
+from django.http import Http404
 # Create your views here.
 
 @login_required(login_url='login')
@@ -11,6 +12,8 @@ def add(request):
     if request.method == 'POST':
         form = ArticlesForm(request.POST)
         if form.is_valid():
+            obj = form.save(commit=False)
+            obj.author = request.user
             form.save()
             return redirect('news_home')
         else:
@@ -24,7 +27,6 @@ def add(request):
 def news_home(request):
     news = Articles.objects.all()
     data = {'news': news}
-    print(news[0])
     return render(request, 'news/news_home.html', data)
 
 
@@ -40,7 +42,17 @@ class NewsUpdateView(UpdateView):
 
     form_class = ArticlesForm
 
+    def dispatch(self, request, *args, **kwargs):
+        if self.get_object().author != request.user:
+            raise Http404('Это не ваша статья!')
+        return super(NewsUpdateView, self).dispatch(request, *args, **kwargs)
+
 class NewsDeleteView(DeleteView):
     model = Articles
     template_name = 'news/delete.html'
     success_url = '/news/'
+
+    def dispatch(self, request, *args, **kwargs):
+        if self.get_object().author != request.user:
+            raise Http404('Это не ваша статья!')
+        return super(NewsDeleteView, self).dispatch(request, *args, **kwargs)

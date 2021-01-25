@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{% static 'news/css/news_home.css' %}">
     {% for item in news %}
         <div class="articles">
+            <p class="author">Автор: {{ item.author }}</p>
             <h3 class="title">{{ item.title }}</h3>
             <p class="abstract">{{ item.abstract }}</p>
             <p class="date">{{ item.date }}</p>
